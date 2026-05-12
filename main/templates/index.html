@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <title>Годовой коллективный проект 8А класса</title>
+</head>
+<body>
+    <div class = "main">
+        <div class = "top">
+            <h1>Тема проекта типо тут будет а пока заглушка как и в тексте</h1>
+            <h2>Годовой коллективный проект 8А класса</h2>
+        </div>
+        <div class = "image">
+            <img src="{{ url_for('static', filename='images/331.jpg') }}">
+        </div>
+        <div class = "txt">
+            <p1>В данном проекте мы исследуем лексику стихотворений начала XX века. Многие слова, которые использовали поэты того времени, сегодня вышли из активного употребления или изменили свое значение. Мы собрали уникальный словарь «незнакомых слов», чтобы помочь современному читателю глубже понять смысл классических произведений и прочувствовать атмосферу эпохи.</p1>
+            <div class = "qwe">
+                <a href="/dict" class="button">Словарь</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

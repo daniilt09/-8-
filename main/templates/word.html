@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <title>Годовой коллективный проект 8А класса</title>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <h1>{{ word.title }}</h1>
+            <h2>{{ word.category }}</h2>
+        </div>
+
+        <div class="info">
+            <div class="definition">
+                <h3>Значение</h3>
+                <p><strong>{{ word.desc }}</strong></p>
+                <p class="description-text">{{ word.desc_full }}</p>
+            </div>
+
+            <hr class="line">
+
+            <div class="poem">
+                <h3>Пример из поэзии</h3>
+                <div class="box">
+                    <p class="txt2">{{ word.poem | replace('\n', '<br>') | safe }}</p>
+                    <p class="author">— {{ word.author }}</p>
+                </div>
+            </div>
+
+            <div class="qwe">
+                <a href="/dict" class="button">← Назад в словарь</a>
+            </div>
+        </div> 
+    </div> 
+</body>

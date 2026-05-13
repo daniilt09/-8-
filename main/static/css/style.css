@@ -37,7 +37,7 @@ h2 {
     font-size: 30px;
 }
 .image {
-    padding: 70px 50px 20px 50px;
+    padding: 7% 5% 2% 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@ h2 {
     border-radius: 8px;
 }
 .txt {
-    padding: 50px 100px;
+    padding: 50px 10%;
     font-size: 20px;
     text-align: justify;
 }

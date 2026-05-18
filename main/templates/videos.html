@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght=0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <title>Дни проекта</title>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <h1>Видео по дням</h1>
+        </div>
+        
+        <div class="dict">
+            {% for day in days %}
+            {% set display_name = day.replace('Den_', 'День ') %}
+            <a href="/videos/{{ day }}" class="wcard">
+                <div class="wcardtxt">
+                    <h3>{{ display_name }}</h3>
+                    <p>Смотреть видеозаписи одноклассников за этот день</p>
+                    <span class="more">Открыть</span>
+                </div>
+            </a>
+            {% else %}
+            <div class="box">
+                <p class="txt2">Папки дней пока не созданы в static/videos/</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="qwe">
+            <a href="/" class = "button">На главную</a>
+            <a href="/dict" class = "button">В словарь</a>
+        </div>
+    </div>
+</body>
+</html>

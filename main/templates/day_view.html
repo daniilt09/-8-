@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght=0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <title>{{ day_name.replace('Den_', 'День ') }} — Видео</title>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <h1>{{ day_name.replace('Den_', 'День ') }}</h1>
+        </div>
+        
+        <div class="dict">
+            {% for video in videos %}
+            {% set name = video.replace('.mp4', '') %}
+            <div class="video-card">
+                <div class="video-card-body">
+                    <h3>Запись: {{ name }}</h3>
+                    <div class="video-wrapper">
+                        <video controls preload="none" class="player">
+                            <source src="{{ url_for('static', filename='videos/' + day_name + '/' + video) }}" type="video/mp4">
+                            Ваш браузер не поддерживает встроенные видео.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="box">
+                <p class="txt2">В эту папку еще не добавили видеофайлы .mp4</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="qwe">
+            <a href="/videos" class = "button">Назад к дням</a>
+            <a href="/" class = "button">На главную</a>
+        </div>
+    </div>
+</body>
+</html>
